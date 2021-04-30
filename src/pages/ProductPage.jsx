@@ -25,11 +25,13 @@ class ProductPage extends Component {
           <Row>
             <Col className='col-3'>
               <img
-                src="https://cdn.phonehouse.es/res/viewthree450/resource_1021924.jpg?&w=380&h=380&trim=auto&auto=format"
+                src={this.state.product.image}
                 alt=""/>
             </Col>
             <Col className='col-6'>
-              <h5>{this.state.product.image}</h5>
+              <h5>{this.state.product.name}</h5>
+              <h5>{this.state.product.brand}</h5>
+              <p>{this.state.product.description}</p>
             </Col>
           </Row>
         </ProductContainer>
