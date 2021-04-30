@@ -7,11 +7,14 @@ import ProductCard from "../ui/ProductCard.jsx";
 
 class ProductGrid extends Component {
   state = {
-    products: productDoc.products
+    products: productDoc.products,
+    apiProducts: []
   }
 
   async componentDidMount() {
     console.log(this.state.products)
+    const {data} = axios('https://m6-amazon-backend.herokuapp.com/products/')
+    console.log(data)
   }
 
   render() {

@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap";
-import logo from 'assets/amazon-logo.png.png'
 import styled from 'styled-components'
 
 const NavBar = () => {
