@@ -17,6 +17,7 @@ class ProductGrid extends Component {
   render() {
     return (
       <GridWrapper>
+        <h2>Hot products</h2>
         {this.state.apiProducts.map((product, i) => {
           return <ProductCard {...product} key={i}/>
         })}
