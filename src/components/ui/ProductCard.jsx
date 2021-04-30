@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Button, Card} from "react-bootstrap";
+import {Link} from 'react-router-dom'
 import PropTypes from "prop-types";
 import StarRatingComponent from 'react-star-rating-component';
 import styled from 'styled-components'
@@ -11,8 +12,10 @@ const ProductCard = (product) => {
     setRating({rating: nextValue});
   }
 
+  console.log(product._id)
+
   return (
-    <CardWrapper>
+    <CardWrapper to={`/product/${product._id}`}>
       <Card className="border-0">
         <Card.Img className="mb-3" variant="top" src={product.imageUrl}/>
         <Card.Body>
@@ -44,7 +47,7 @@ ProductCard.propTypes = {
 
 export default ProductCard;
 
-const CardWrapper = styled.div`
+const CardWrapper = styled(Link)`
   cursor: pointer;
   max-width: 300px;
 `

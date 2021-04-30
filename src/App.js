@@ -19,7 +19,7 @@ function App() {
       <Switch>
         <Route exact path="/" render={(routerProps) => <HomePage {...routerProps}/>}/>
         <Route exact path="/account" render={(routerProps) => <AccountPage {...routerProps}/>}/>
-        <Route exact path="/:productId" render={(routerProps) => <ProductPage {...routerProps}/>}/>
+        <Route exact path="/product/:productId" render={(routerProps) => <ProductPage {...routerProps}/>}/>
       </Switch>
     </Router>
   );
