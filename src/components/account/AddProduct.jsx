@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import AddProductModal from "./AddProductModal";
-import SingleProduct from "./SingleProduct";
 
-const MainBody = () => {
+const AddProduct = () => {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
@@ -26,15 +25,8 @@ const MainBody = () => {
   return (
     <Container>
       <AddProductModal fetchProducts={fetchProducts} />
-      <Row>
-        {products.map((product) => (
-          <Col xs={4} className="mb-4">
-            <SingleProduct key={product.id} product={product} />
-          </Col>
-        ))}
-      </Row>
     </Container>
   );
 };
 
-export default MainBody;
+export default AddProduct;
