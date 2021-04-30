@@ -1,10 +1,10 @@
 import React from 'react';
-import AddProduct from "../components/account/AddProduct.jsx";
+import ManageProducts from "../components/account/ManageProducts.jsx";
 
 const AccountPage = () => {
   return (
     <div>
-      <AddProduct className="mt-6" />
+      <ManageProducts className="mt-6" />
     </div>
   );
 };

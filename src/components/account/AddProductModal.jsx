@@ -30,7 +30,7 @@ const AddProductModal = (props) => {
     console.log(data.id);
     try {
       const response = await fetch(
-        `http://localhost:3001/products/${data.id}/upload`,
+        `https://m6-amazon-backend.herokuapp.com/products/${data.id}/upload`,
         {
           method: "POST",
           body: formData,

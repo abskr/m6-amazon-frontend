@@ -45,9 +45,10 @@ ProductCard.propTypes = {
   })
 }
 
-export default ProductCard;
-
 const CardWrapper = styled(Link)`
   cursor: pointer;
   max-width: 300px;
+  color: black;
 `
+
+export default ProductCard;

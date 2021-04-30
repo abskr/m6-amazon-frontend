@@ -10,7 +10,6 @@ class ProductGrid extends Component {
   }
 
   async componentDidMount() {
-    console.log(this.state.products)
     const {data} = await axios('https://m6-amazon-backend.herokuapp.com/products/')
     this.setState({...this.state, apiProducts: data.products})
   }
