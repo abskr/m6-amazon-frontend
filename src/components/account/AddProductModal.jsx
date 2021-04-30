@@ -49,7 +49,7 @@ const AddProductModal = (props) => {
 
   const postData = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/products`, {
+      const response = await fetch(`https://m6-amazon-backend.herokuapp.com/products`, {
         method: "POST",
         body: JSON.stringify(newProductObj),
         headers: {

@@ -7,9 +7,24 @@ class ProductsTable extends Component {
     products: []
   }
 
-  async componentDidMount() {
+  handleDeleteProduct = async(productId) => {
+    const {data} = await axios.delete(`https://m6-amazon-backend.herokuapp.com/products/${productId}`)
+    console.log(data)
+  }
+
+  fetchProducts = async () => {
     const {data} = await axios.get('https://m6-amazon-backend.herokuapp.com/products/')
     this.setState({...this.state, products: data.products})
+  }
+
+  async componentDidMount() {
+    await this.fetchProducts()
+  }
+
+  async componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevState !== this.state) {
+      await this.fetchProducts()
+    }
   }
 
   render() {
@@ -24,6 +39,7 @@ class ProductsTable extends Component {
           <th>Image</th>
           <th>Category</th>
           <th>Price</th>
+          <th>options</th>
         </tr>
         </thead>
         <tbody>
@@ -37,6 +53,7 @@ class ProductsTable extends Component {
               <td><img width="100" src={product.imageUrl} alt={product.name} /></td>
               <td>{product.category}</td>
               <td>{product.price}</td>
+              <td><button onClick={() => this.handleDeleteProduct(product._id)}>X</button></td>
             </tr>
           )
         })}

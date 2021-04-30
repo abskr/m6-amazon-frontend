@@ -15,7 +15,6 @@ class ProductPage extends Component {
     console.log(this.props.match.params)
     const {data} = await axios.get(`https://m6-amazon-backend.herokuapp.com/products/${productId}`)
     console.log(data)
-
   }
 
   render() {
